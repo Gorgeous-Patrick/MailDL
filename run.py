@@ -39,12 +39,12 @@ def obtain_header(msg):
     # decode the email subject
     subject, encoding = decode_header(msg["Subject"])[0]
     if isinstance(subject, bytes):
-        subject = subject.decode(encoding)
+        subject = subject.decode()
  
     # decode email sender
     From, encoding = decode_header(msg.get("From"))[0]
     if isinstance(From, bytes):
-        From = From.decode(encoding)
+        From = From.decode()
  
     return subject, From
  
